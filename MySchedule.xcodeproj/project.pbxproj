@@ -9,21 +9,28 @@
 /* Begin PBXBuildFile section */
 		D04BA0232A1F97AB000CC558 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BA0222A1F97AB000CC558 /* AppDelegate.swift */; };
 		D04BA0252A1F97AB000CC558 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BA0242A1F97AB000CC558 /* SceneDelegate.swift */; };
-		D04BA0272A1F97AB000CC558 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BA0262A1F97AB000CC558 /* ViewController.swift */; };
-		D04BA02A2A1F97AB000CC558 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04BA0282A1F97AB000CC558 /* Main.storyboard */; };
+		D04BA0272A1F97AB000CC558 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BA0262A1F97AB000CC558 /* MainTabBarController.swift */; };
 		D04BA02C2A1F97AE000CC558 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D04BA02B2A1F97AE000CC558 /* Assets.xcassets */; };
 		D04BA02F2A1F97AE000CC558 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04BA02D2A1F97AE000CC558 /* LaunchScreen.storyboard */; };
+		D04BA0392A1F992C000CC558 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BA0382A1F992B000CC558 /* ScheduleViewController.swift */; };
+		D04BA03B2A1F9938000CC558 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BA03A2A1F9938000CC558 /* TasksViewController.swift */; };
+		D04BA03D2A1F9946000CC558 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BA03C2A1F9946000CC558 /* ContactsViewController.swift */; };
+		D04BA0402A2096F0000CC558 /* UIViewController + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BA03F2A2096F0000CC558 /* UIViewController + Extention.swift */; };
+		D04BA0442A20A57B000CC558 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = D04BA0432A20A57B000CC558 /* FSCalendar */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D04BA01F2A1F97AB000CC558 /* MySchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04BA0222A1F97AB000CC558 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D04BA0242A1F97AB000CC558 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D04BA0262A1F97AB000CC558 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D04BA0292A1F97AB000CC558 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D04BA0262A1F97AB000CC558 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		D04BA02B2A1F97AE000CC558 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D04BA02E2A1F97AE000CC558 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D04BA0302A1F97AE000CC558 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D04BA0382A1F992B000CC558 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		D04BA03A2A1F9938000CC558 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		D04BA03C2A1F9946000CC558 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		D04BA03F2A2096F0000CC558 /* UIViewController + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extention.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D04BA0442A20A57B000CC558 /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +64,50 @@
 		D04BA0212A1F97AB000CC558 /* MySchedule */ = {
 			isa = PBXGroup;
 			children = (
-				D04BA0222A1F97AB000CC558 /* AppDelegate.swift */,
-				D04BA0242A1F97AB000CC558 /* SceneDelegate.swift */,
-				D04BA0262A1F97AB000CC558 /* ViewController.swift */,
-				D04BA0282A1F97AB000CC558 /* Main.storyboard */,
+				D04BA0412A2096F7000CC558 /* Utils */,
+				D04BA0362A1F9867000CC558 /* SupportingFiles */,
+				D04BA0372A1F9878000CC558 /* Application */,
+				D04BA0262A1F97AB000CC558 /* MainTabBarController.swift */,
+				D04BA0382A1F992B000CC558 /* ScheduleViewController.swift */,
+				D04BA03A2A1F9938000CC558 /* TasksViewController.swift */,
+				D04BA03C2A1F9946000CC558 /* ContactsViewController.swift */,
+			);
+			path = MySchedule;
+			sourceTree = "<group>";
+		};
+		D04BA0362A1F9867000CC558 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				D04BA02B2A1F97AE000CC558 /* Assets.xcassets */,
 				D04BA02D2A1F97AE000CC558 /* LaunchScreen.storyboard */,
 				D04BA0302A1F97AE000CC558 /* Info.plist */,
 			);
-			path = MySchedule;
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		D04BA0372A1F9878000CC558 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				D04BA0222A1F97AB000CC558 /* AppDelegate.swift */,
+				D04BA0242A1F97AB000CC558 /* SceneDelegate.swift */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		D04BA03E2A1F9997000CC558 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				D04BA03F2A2096F0000CC558 /* UIViewController + Extention.swift */,
+			);
+			name = Extentions;
+			sourceTree = "<group>";
+		};
+		D04BA0412A2096F7000CC558 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D04BA03E2A1F9997000CC558 /* Extentions */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +126,9 @@
 			dependencies = (
 			);
 			name = MySchedule;
+			packageProductDependencies = (
+				D04BA0432A20A57B000CC558 /* FSCalendar */,
+			);
 			productName = MySchedule;
 			productReference = D04BA01F2A1F97AB000CC558 /* MySchedule.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +157,9 @@
 				Base,
 			);
 			mainGroup = D04BA0162A1F97AB000CC558;
+			packageReferences = (
+				D04BA0422A20A57B000CC558 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+			);
 			productRefGroup = D04BA0202A1F97AB000CC558 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +176,6 @@
 			files = (
 				D04BA02F2A1F97AE000CC558 /* LaunchScreen.storyboard in Resources */,
 				D04BA02C2A1F97AE000CC558 /* Assets.xcassets in Resources */,
-				D04BA02A2A1F97AB000CC558 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +186,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D04BA0272A1F97AB000CC558 /* ViewController.swift in Sources */,
+				D04BA0272A1F97AB000CC558 /* MainTabBarController.swift in Sources */,
 				D04BA0232A1F97AB000CC558 /* AppDelegate.swift in Sources */,
+				D04BA03B2A1F9938000CC558 /* TasksViewController.swift in Sources */,
+				D04BA0402A2096F0000CC558 /* UIViewController + Extention.swift in Sources */,
 				D04BA0252A1F97AB000CC558 /* SceneDelegate.swift in Sources */,
+				D04BA0392A1F992C000CC558 /* ScheduleViewController.swift in Sources */,
+				D04BA03D2A1F9946000CC558 /* ContactsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D04BA0282A1F97AB000CC558 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D04BA0292A1F97AB000CC558 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D04BA02D2A1F97AE000CC558 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +336,6 @@
 				INFOPLIST_FILE = MySchedule/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -323,7 +366,6 @@
 				INFOPLIST_FILE = MySchedule/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -364,6 +406,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D04BA0422A20A57B000CC558 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D04BA0432A20A57B000CC558 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D04BA0422A20A57B000CC558 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D04BA0172A1F97AB000CC558 /* Project object */;
 }
