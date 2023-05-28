@@ -22,19 +22,15 @@ class ScheduleViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-    
+        
+        self.selectionStyle = .none
         layout()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func layoutSubviews() {
-        
-    }
 
-    
     private func layout() {
         
         let topStackView: UIStackView = UIStackView(
@@ -61,14 +57,14 @@ class ScheduleViewCell: UITableViewCell {
         ])
         
         NSLayoutConstraint.activate([
-            lessonTimeLabel.topAnchor.constraint(equalTo: topStackView.bottomAnchor, constant: 10),
+            lessonTimeLabel.topAnchor.constraint(equalTo: topStackView.bottomAnchor, constant: 5),
             lessonTimeLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             lessonTimeLabel.widthAnchor.constraint(equalToConstant: 100),
             lessonTimeLabel.heightAnchor.constraint(equalToConstant: 25)
         ])
         
         NSLayoutConstraint.activate([
-            bottomStackView.topAnchor.constraint(equalTo: topStackView.bottomAnchor, constant: 10),
+            bottomStackView.topAnchor.constraint(equalTo: topStackView.bottomAnchor, constant: 5),
             bottomStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             bottomStackView.leadingAnchor.constraint(equalTo: lessonTimeLabel.trailingAnchor, constant: 5),
             bottomStackView.heightAnchor.constraint(equalToConstant: 25)

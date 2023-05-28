@@ -53,7 +53,7 @@ extension ScheduleViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
         tableView.delegate = self
-        
+        tableView.bounces = false
         tableView.register(ScheduleViewCell.self, forCellReuseIdentifier: ScheduleViewCell.identifire)
     }
     
@@ -156,6 +156,6 @@ extension ScheduleViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension ScheduleViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 75
     }
 }

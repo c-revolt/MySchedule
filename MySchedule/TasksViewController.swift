@@ -13,12 +13,14 @@ class TasksViewController: UIViewController {
     private var calendar: FSCalendar = FSCalendar()
     private var calendarHeightConstraint: NSLayoutConstraint?
     private let showHideButton: UIButton = UIButton(type: .system)
+    private let tableView: UITableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         views()
         layout()
         swipeAction()
+        setupTableView()
     }
 }
 
@@ -42,9 +44,18 @@ extension TasksViewController {
         showHideButton.addTarget(self, action: #selector(showHideButtonTapped), for: .touchUpInside)
     }
     
+    private func setupTableView() {
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.bounces = false
+        tableView.register(TasksViewCell.self, forCellReuseIdentifier: TasksViewCell.identifire)
+    }
+    
     private func layout() {
         view.addSubview(calendar)
         view.addSubview(showHideButton)
+        view.addSubview(tableView)
         
         calendarHeightConstraint = NSLayoutConstraint(
             item: calendar,
@@ -64,7 +75,11 @@ extension TasksViewController {
             calendar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             showHideButton.topAnchor.constraint(equalTo: calendar.bottomAnchor),
             showHideButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            showHideButton.heightAnchor.constraint(equalToConstant: 20)
+            showHideButton.heightAnchor.constraint(equalToConstant: 20),
+            tableView.topAnchor.constraint(equalTo: showHideButton.bottomAnchor, constant: 10),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
     }
 
@@ -99,6 +114,27 @@ extension TasksViewController {
         default:
             break
         }
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension TasksViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TasksViewCell.identifire, for: indexPath) as? TasksViewCell else { return UITableViewCell() }
+        
+        return cell
+    }
+    
+    
+}
+// MARK: - UITableViewDelegate
+extension TasksViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 }
 
